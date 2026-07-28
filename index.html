@@ -1,1427 +1,1517 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TOP MARKET 銳鋒顧問 | 讓商業視野 超越界限</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          bg:         '#0a0a0c',
-          'bg-soft':  '#0f0f13',
-          'bg-card':  '#16161c',
-          'bg-deep':  '#07070a',
-          gold:       '#c9a96e',
-          'gold-light': '#d4b87a',
-          'gold-dark': '#a88c54',
-          navy:       '#0f1a2e',
-          text:       '#ffffff',
-          'text-muted': '#8a8a95',
-          'text-dim': '#555560',
-          border:     '#1e1e26',
-          'border-soft': '#15151a',
-        },
-        fontFamily: {
-          serif: ['"Noto Serif HK"', 'serif'],
-          sans: ['Inter', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
-          display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
-        },
-        letterSpacing: {
-          'widest-xl': '0.25em',
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP MARKET 銳鋒顧問 | 讓商業視野 超越界限</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0a0a0c',
+                        'bg-soft': '#0f0f13',
+                        'bg-card': '#16161c',
+                        'bg-deep': '#07070a',
+                        gold: '#c9a96e',
+                        'gold-light': '#d4b87a',
+                        'gold-dark': '#a88c54',
+                        navy: '#0f1a2e',
+                        text: '#ffffff',
+                        'text-muted': '#8a8a95',
+                        'text-dim': '#555560',
+                        border: '#1e1e26',
+                        'border-soft': '#15151a',
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif HK"', 'serif'],
+                        sans: ['Inter', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'widest-xl': '0.25em',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
         }
-      }
-    }
-  };
-</script>
-<style>
-  *, *::before, *::after { box-sizing: border-box; }
-  img, video { max-width: 100%; height: auto; display: block; }
-  body { overflow-wrap: break-word; }
+        img,
+        video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        body {
+            overflow-wrap: break-word;
+        }
 
-  html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  body {
-    background: #0a0a0c;
-    color: #ffffff;
-    font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+        body {
+            background: #0a0a0c;
+            color: #ffffff;
+            font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
 
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: #0a0a0c; }
-  ::-webkit-scrollbar-thumb { background: #c9a96e; border-radius: 2px; }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c9a96e;
+            border-radius: 2px;
+        }
 
-  /* ========== 入场动画 ========== */
-  .reveal {
-    opacity: 0;
-    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal-up    { transform: translateY(50px); }
-  .reveal-left  { transform: translateX(-60px); }
-  .reveal-right { transform: translateX(60px); }
-  .reveal-scale { transform: scale(0.95); }
-  .reveal.visible { opacity: 1; transform: translate(0, 0) scale(1); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
-  .reveal-delay-6 { transition-delay: 0.6s; }
+        /* ========== 入场动画 ========== */
+        .reveal {
+            opacity: 0;
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up {
+            transform: translateY(50px);
+        }
+        .reveal-left {
+            transform: translateX(-60px);
+        }
+        .reveal-right {
+            transform: translateX(60px);
+        }
+        .reveal-scale {
+            transform: scale(0.95);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+        .reveal-delay-6 {
+            transition-delay: 0.6s;
+        }
 
-  /* ========== 金色渐变（仅 Hero 大标题用） ========== */
-  .text-gold-gradient {
-    background: linear-gradient(135deg, #f0d78c 0%, #c9a96e 40%, #a88c54 70%, #c9a96e 100%);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: metalShine 5s ease-in-out infinite;
-  }
-  @keyframes metalShine {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
+        /* ========== 金色渐变（仅 Hero 大标题用） ========== */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f0d78c 0%, #c9a96e 40%, #a88c54 70%, #c9a96e 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: metalShine 5s ease-in-out infinite;
+        }
+        @keyframes metalShine {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
 
-  /* ========== 按钮 ========== */
-  .btn-primary {
-    background: #ffffff;
-    color: #0a0a0c;
-    font-weight: 600;
-    padding: 14px 36px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid #ffffff;
-    position: relative;
-    overflow: hidden;
-    font-size: 14px;
-  }
-  .btn-primary::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 50%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transform: skewX(-25deg);
-    transition: left 0.6s ease;
-  }
-  .btn-primary:hover::after { left: 120%; }
-  .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(255,255,255,0.15);
-  }
+        /* ========== 按钮 ========== */
+        .btn-primary {
+            background: #ffffff;
+            color: #0a0a0c;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #ffffff;
+            position: relative;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: skewX(-25deg);
+            transition: left 0.6s ease;
+        }
+        .btn-primary:hover::after {
+            left: 120%;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.15);
+        }
 
-  .btn-outline {
-    background: transparent;
-    color: #ffffff;
-    font-weight: 500;
-    padding: 14px 36px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid rgba(255,255,255,0.25);
-    font-size: 14px;
-  }
-  .btn-outline:hover {
-    background: rgba(255,255,255,0.06);
-    border-color: rgba(255,255,255,0.5);
-    transform: translateY(-3px);
-  }
+        .btn-outline {
+            background: transparent;
+            color: #ffffff;
+            font-weight: 500;
+            padding: 14px 36px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            font-size: 14px;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+        }
 
-  /* ========== Header & 下拉导航 ========== */
-  .site-header {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .site-header.scrolled {
-    background: rgba(10,10,12,0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
+        /* ========== Header & 下拉导航 ========== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .site-header.scrolled {
+            background: rgba(10, 10, 12, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
 
-  /* 汉堡按钮 */
-  .menu-toggle {
-    width: 32px; height: 20px;
-    position: relative; cursor: pointer;
-    display: flex; flex-direction: column;
-    justify-content: space-between;
-  }
-  .menu-toggle span {
-    width: 100%; height: 1.5px;
-    background: #ffffff;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    transform-origin: center;
-  }
-  .menu-toggle span:nth-child(2) { width: 70%; margin-left: auto; }
-  .menu-toggle.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-    width: 100%;
-  }
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0; transform: scaleX(0);
-  }
-  .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-  }
+        .menu-toggle {
+            width: 32px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .menu-toggle span {
+            width: 100%;
+            height: 1.5px;
+            background: #ffffff;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-origin: center;
+        }
+        .menu-toggle span:nth-child(2) {
+            width: 70%;
+            margin-left: auto;
+        }
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+            width: 100%;
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
 
-  /* 下拉菜单 */
-  .dropdown-nav {
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    background: rgba(10,10,12,0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .dropdown-nav.open {
-    max-height: 600px;
-  }
-  .dropdown-nav-inner {
-    padding: 20px 0 30px;
-  }
-  .dropdown-nav a {
-    display: block;
-    padding: 12px 0;
-    color: #8a8a95;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-    position: relative;
-  }
-  .dropdown-nav a:hover {
-    color: #ffffff;
-    padding-left: 12px;
-  }
-  .dropdown-nav a::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 50%;
-    width: 0; height: 1px;
-    background: #c9a96e;
-    transition: width 0.3s ease;
-  }
-  .dropdown-nav a:hover::before { width: 6px; }
+        .dropdown-nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 12, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .dropdown-nav.open {
+            max-height: 600px;
+        }
+        .dropdown-nav-inner {
+            padding: 20px 0 30px;
+        }
+        .dropdown-nav a {
+            display: block;
+            padding: 12px 0;
+            color: #8a8a95;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+            position: relative;
+        }
+        .dropdown-nav a:hover {
+            color: #ffffff;
+            padding-left: 12px;
+        }
+        .dropdown-nav a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 1px;
+            background: #c9a96e;
+            transition: width 0.3s ease;
+        }
+        .dropdown-nav a:hover::before {
+            width: 6px;
+        }
 
-  .has-submenu { position: relative; }
-  .submenu-dropdown {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.4s ease;
-    padding-left: 16px;
-  }
-  .submenu-dropdown.open { max-height: 200px; }
-  .submenu-dropdown a {
-    font-size: 13px;
-    color: #555560;
-    padding: 8px 0;
-  }
-  .submenu-dropdown a:hover { color: #c9a96e; }
+        .has-submenu {
+            position: relative;
+        }
+        .submenu-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding-left: 16px;
+        }
+        .submenu-dropdown.open {
+            max-height: 200px;
+        }
+        .submenu-dropdown a {
+            font-size: 13px;
+            color: #555560;
+            padding: 8px 0;
+        }
+        .submenu-dropdown a:hover {
+            color: #c9a96e;
+        }
 
-  /* ========== Hero ========== */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    padding-top: 100px;
-  }
-  .hero-bg-img {
-    position: absolute; inset: 0;
-    background-image: url('https://picsum.photos/1920/1080?random=1');
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-    will-change: transform;
-  }
-  .hero-bg-img::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(10,10,12,0.85) 0%, rgba(10,10,12,0.5) 50%, rgba(10,10,12,0.9) 100%);
-  }
+        /* ========== Hero ========== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+        .hero-bg-img {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://picsum.photos/1920/1080?random=1');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            will-change: transform;
+        }
+        .hero-bg-img::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 10, 12, 0.85) 0%, rgba(10, 10, 12, 0.5) 50%, rgba(10, 10, 12, 0.9) 100%);
+        }
 
-  /* 斜切装饰 */
-  .hero-slice {
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    width: 40%;
-    background: linear-gradient(135deg, rgba(15,26,46,0.6) 0%, rgba(10,10,12,0.3) 100%);
-    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
-    z-index: 1;
-  }
+        .hero-slice {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background: linear-gradient(135deg, rgba(15, 26, 46, 0.6) 0%, rgba(10, 10, 12, 0.3) 100%);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+            z-index: 1;
+        }
 
-  /* 装饰线 */
-  .deco-lines {
-    position: absolute; inset: 0; z-index: 1; pointer-events: none;
-    opacity: 0.06;
-  }
-  .deco-lines::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 10%;
-    width: 1px; height: 100%;
-    background: linear-gradient(180deg, transparent, #ffffff, transparent);
-  }
-  .deco-lines::after {
-    content: '';
-    position: absolute;
-    top: 0; right: 20%;
-    width: 1px; height: 100%;
-    background: linear-gradient(180deg, transparent, #c9a96e, transparent);
-  }
+        .deco-lines {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.06;
+        }
+        .deco-lines::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #ffffff, transparent);
+        }
+        .deco-lines::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 20%;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #c9a96e, transparent);
+        }
 
-  /* 点阵 */
-  .dot-grid {
-    position: absolute;
-    width: 200px; height: 200px;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
-    background-size: 12px 12px;
-    pointer-events: none;
-  }
+        .dot-grid {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 12px 12px;
+            pointer-events: none;
+        }
 
-  /* Hero 大标题 3D */
-  .hero-title {
-    font-family: "Noto Serif HK", serif;
-    font-weight: 900;
-    line-height: 1.05;
-    text-shadow:
-      0 2px 8px rgba(0,0,0,0.5),
-      0 10px 40px rgba(0,0,0,0.3);
-    will-change: transform;
-    transition: transform 0.15s ease-out;
-  }
+        .hero-title {
+            font-family: "Noto Serif HK", serif;
+            font-weight: 900;
+            line-height: 1.05;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.3);
+            will-change: transform;
+            transition: transform 0.15s ease-out;
+        }
 
-  /* 竖排英文装饰 */
-  .vertical-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: rgba(255,255,255,0.3);
-    text-transform: uppercase;
-  }
+        /* ========== 斜切分隔 ========== */
+        .section-divider {
+            height: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        .divider-slant {
+            position: absolute;
+            width: 120%;
+            height: 100%;
+            left: -10%;
+        }
 
-  /* ========== 斜切分隔 ========== */
-  .section-divider {
-    height: 120px;
-    position: relative;
-    overflow: hidden;
-  }
-  .divider-slant {
-    position: absolute;
-    width: 120%;
-    height: 100%;
-    left: -10%;
-  }
+        /* ========== 3D 卡片倾斜 ========== */
+        .tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1200px;
+            transition: box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        .tilt-card-inner {
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+        }
+        .tilt-card:hover {
+            border-color: rgba(255, 255, 255, 0.15) !important;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+        .tilt-parallax {
+            transition: transform 0.15s ease-out;
+            will-change: transform;
+        }
 
-  /* ========== 3D 卡片倾斜 ========== */
-  .tilt-card {
-    transform-style: preserve-3d;
-    perspective: 1200px;
-    transition: box-shadow 0.4s ease, border-color 0.4s ease;
-  }
-  .tilt-card-inner {
-    transition: transform 0.1s ease-out;
-    will-change: transform;
-  }
-  .tilt-card:hover {
-    border-color: rgba(255,255,255,0.15) !important;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-  }
-  .tilt-parallax {
-    transition: transform 0.15s ease-out;
-    will-change: transform;
-  }
+        /* ========== 服务范围 - 竖条手风琴 ========== */
+        .accordion-bars {
+            display: flex;
+            gap: 2px;
+            height: 520px;
+            width: 100%;
+        }
+        .acc-bar {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: flex 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 2px;
+        }
+        .acc-bar:hover {
+            flex: 4;
+        }
+        .acc-bar-img {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .acc-bar:hover .acc-bar-img {
+            transform: scale(1.1);
+        }
+        .acc-bar-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 10, 12, 0.3) 0%, rgba(10, 10, 12, 0.8) 100%);
+        }
+        .acc-bar-content {
+            position: absolute;
+            inset: 0;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+        }
+        .acc-bar-num {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.1em;
+        }
+        .acc-bar-title {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-family: "Noto Serif HK", serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            align-self: center;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+        }
+        .acc-bar:hover .acc-bar-title {
+            writing-mode: horizontal-tb;
+            align-self: flex-start;
+            font-size: 22px;
+        }
 
-  /* ========== 服务范围 - 竖条手风琴 ========== */
-  .accordion-bars {
-    display: flex;
-    gap: 2px;
-    height: 520px;
-    width: 100%;
-  }
-  .acc-bar {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: flex 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    border-radius: 2px;
-  }
-  .acc-bar:hover { flex: 4; }
-  .acc-bar-img {
-    position: absolute; inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .acc-bar:hover .acc-bar-img { transform: scale(1.1); }
-  .acc-bar-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(10,10,12,0.3) 0%, rgba(10,10,12,0.8) 100%);
-  }
-  .acc-bar-content {
-    position: absolute;
-    inset: 0;
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: white;
-  }
-  .acc-bar-num {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0.1em;
-  }
-  .acc-bar-title {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-family: "Noto Serif HK", serif;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    align-self: center;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    white-space: nowrap;
-  }
-  .acc-bar:hover .acc-bar-title {
-    writing-mode: horizontal-tb;
-    align-self: flex-start;
-    font-size: 22px;
-  }
-  .acc-bar-detail {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    transition-delay: 0.1s;
-    font-size: 13px;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.7;
-    max-height: 0;
-    overflow: hidden;
-  }
-  .acc-bar:hover .acc-bar-detail {
-    opacity: 1;
-    transform: translateY(0);
-    max-height: 200px;
-  }
+        @media (max-width: 768px) {
+            .accordion-bars {
+                flex-direction: column;
+                height: auto;
+                gap: 2px;
+            }
+            .acc-bar {
+                height: 80px;
+                flex: none;
+                transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .acc-bar:hover {
+                flex: none;
+                height: 160px;
+            }
+            .acc-bar-title {
+                writing-mode: horizontal-tb;
+                align-self: flex-start;
+                font-size: 16px;
+            }
+            .acc-bar-content {
+                flex-direction: row;
+                align-items: center;
+                padding: 16px 20px;
+            }
+            .acc-bar:hover .acc-bar-content {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+            .acc-bar-num {
+                font-size: 11px;
+            }
+        }
 
-  @media (max-width: 768px) {
-    .accordion-bars {
-      flex-direction: column;
-      height: auto;
-      gap: 2px;
-    }
-    .acc-bar {
-      height: 80px;
-      flex: none;
-      transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .acc-bar:hover { flex: none; height: 240px; }
-    .acc-bar-title {
-      writing-mode: horizontal-tb;
-      align-self: flex-start;
-      font-size: 16px;
-    }
-    .acc-bar-content {
-      flex-direction: row;
-      align-items: center;
-      padding: 16px 20px;
-    }
-    .acc-bar:hover .acc-bar-content {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-    .acc-bar-detail { display: none; }
-    .acc-bar:hover .acc-bar-detail { display: block; }
-  }
+        /* ========== 时间线 ========== */
+        .timeline-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #16161c;
+            border: 2px solid #2a2a33;
+            position: relative;
+            z-index: 2;
+            transition: all 0.5s ease;
+        }
+        .timeline-step.visible .timeline-dot {
+            border-color: #c9a96e;
+            box-shadow: 0 0 20px rgba(201, 169, 110, 0.3);
+        }
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .timeline-step.visible .timeline-dot::after {
+            opacity: 1;
+            animation: pulse 2.5s infinite;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
 
-  /* ========== 时间线 ========== */
-  .timeline-dot {
-    width: 18px; height: 18px; border-radius: 50%;
-    background: #16161c; border: 2px solid #2a2a33;
-    position: relative; z-index: 2;
-    transition: all 0.5s ease;
-  }
-  .timeline-step.visible .timeline-dot {
-    border-color: #c9a96e;
-    box-shadow: 0 0 20px rgba(201,169,110,0.3);
-  }
-  .timeline-dot::after {
-    content: ''; position: absolute; inset: -6px; border-radius: 50%;
-    border: 1px solid rgba(201,169,110,0.2); opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  .timeline-step.visible .timeline-dot::after {
-    opacity: 1; animation: pulse 2.5s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.4; }
-    50% { transform: scale(1.4); opacity: 0; }
-  }
+        .timeline-line {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #1e1e26 15%, #1e1e26 85%, transparent);
+        }
+        .timeline-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 25%;
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.4), transparent);
+            animation: timelineFlow 4s ease-in-out infinite;
+        }
+        @keyframes timelineFlow {
+            0% {
+                left: -25%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
 
-  .timeline-line {
-    position: absolute; top: 30px; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, #1e1e26 15%, #1e1e26 85%, transparent);
-  }
-  .timeline-line::after {
-    content: '';
-    position: absolute; top: 0; left: 0; height: 100%;
-    width: 25%;
-    background: linear-gradient(90deg, transparent, rgba(201,169,110,0.4), transparent);
-    animation: timelineFlow 4s ease-in-out infinite;
-  }
-  @keyframes timelineFlow {
-    0% { left: -25%; }
-    100% { left: 100%; }
-  }
+        /* ========== 表单 ========== */
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            padding: 14px 18px;
+            color: #ffffff;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+            font-family: inherit;
+        }
+        .form-input:focus {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .form-input::placeholder {
+            color: #44444c;
+        }
 
-  /* ========== 表单 ========== */
-  .form-input {
-    width: 100%;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 4px; padding: 14px 18px;
-    color: #ffffff; font-size: 14px;
-    transition: all 0.3s ease; outline: none;
-    font-family: inherit;
-  }
-  .form-input:focus {
-    border-color: rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.04);
-  }
-  .form-input::placeholder { color: #44444c; }
+        /* ========== 数字统计 ========== */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
 
-  /* ========== 数字统计 ========== */
-  .stat-number { font-variant-numeric: tabular-nums; }
+        /* ========== 浮动几何 ========== */
+        .float-shape {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.05;
+            animation: floatShape 18s ease-in-out infinite;
+        }
+        @keyframes floatShape {
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(20px, -15px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-15px, 10px) rotate(240deg);
+            }
+        }
 
-  /* ========== 浮动几何 ========== */
-  .float-shape {
-    position: absolute; pointer-events: none;
-    opacity: 0.05;
-    animation: floatShape 18s ease-in-out infinite;
-  }
-  @keyframes floatShape {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(20px, -15px) rotate(120deg); }
-    66% { transform: translate(-15px, 10px) rotate(240deg); }
-  }
+        /* ========== 大号装饰文字 ========== */
+        .deco-big-text {
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 900;
+            font-size: clamp(80px, 15vw, 200px);
+            line-height: 0.85;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+            letter-spacing: -0.02em;
+            user-select: none;
+            pointer-events: none;
+        }
 
-  /* ========== 大号装饰文字 ========== */
-  .deco-big-text {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 900;
-    font-size: clamp(80px, 15vw, 200px);
-    line-height: 0.85;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.05);
-    letter-spacing: -0.02em;
-    user-select: none;
-    pointer-events: none;
-  }
+        /* ========== Logo ========== */
+        .logo-mark {
+            width: 38px;
+            height: 38px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            position: relative;
+        }
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            width: 8px;
+            height: 8px;
+            border-top: 1.5px solid #c9a96e;
+            border-right: 1.5px solid #c9a96e;
+        }
+        .logo-mark span {
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
 
-  /* ========== Logo ========== */
-  .logo-mark {
-    width: 38px; height: 38px;
-    border: 1.5px solid rgba(255,255,255,0.2);
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 2px;
-    position: relative;
-  }
-  .logo-mark::before {
-    content: '';
-    position: absolute;
-    top: -3px; right: -3px;
-    width: 8px; height: 8px;
-    border-top: 1.5px solid #c9a96e;
-    border-right: 1.5px solid #c9a96e;
-  }
-  .logo-mark span {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: #ffffff;
-    letter-spacing: -0.02em;
-  }
-
-  /* ========== 响应式补充 ========== */
-  @media (max-width: 768px) {
-    .timeline-line { display: none; }
-    .hero-slice { display: none; }
-    .deco-big-text { font-size: 60px; }
-    .vertical-text { display: none; }
-  }
-</style>
+        /* ========== 响应式补充 ========== */
+        @media (max-width: 768px) {
+            .timeline-line {
+                display: none;
+            }
+            .hero-slice {
+                display: none;
+            }
+            .deco-big-text {
+                font-size: 60px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- ========== Header ========== -->
-<header class="site-header" id="siteHeader">
-  <div class="max-w-7xl mx-auto px-6 md:px-10">
-    <div class="flex items-center justify-between py-5">
-      <!-- Logo -->
-      <a href="#top" class="flex items-center gap-3">
-        <div class="logo-mark">
-          <span>TM</span>
-        </div>
-        <div class="hidden sm:block">
-          <div class="text-white font-display font-bold text-sm tracking-widest">TOP MARKET</div>
-          <div class="text-text-dim text-[10px] tracking-widest mt-0.5">銳鋒顧問有限公司</div>
-        </div>
-      </a>
-
-      <!-- 汉堡按钮 -->
-      <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-    <!-- 下拉导航 -->
-    <nav class="dropdown-nav" id="dropdownNav">
-      <div class="dropdown-nav-inner max-w-7xl mx-auto px-6 md:px-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-1">
-          <a href="#about" class="nav-item">關於我們</a>
-          <a href="#advantages" class="nav-item">專業優勢</a>
-          <a href="#business" class="nav-item">核心業務</a>
-          <a href="#services" class="nav-item">服務範圍</a>
-          <a href="#process" class="nav-item">咨詢流程</a>
-          <div class="has-submenu">
-            <a href="#resources" class="nav-item" id="resourcesTrigger">
-              資源中心 <span class="inline-block ml-1 text-xs transition-transform duration-300" id="resourcesArrow">▾</span>
-            </a>
-            <div class="submenu-dropdown" id="resourcesSubmenu">
-              <a href="#market-report">市場報告</a>
-              <a href="#company-report">公司報告</a>
+    <!-- ========== Header ========== -->
+    <header class="site-header" id="siteHeader">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="flex items-center justify-between py-5">
+                <a href="#top" class="flex items-center gap-3">
+                    <div class="logo-mark">
+                        <span>TM</span>
+                    </div>
+                    <div class="hidden sm:block">
+                        <div class="text-white font-display font-bold text-sm tracking-widest">TOP MARKET</div>
+                        <div class="text-text-dim text-[10px] tracking-widest mt-0.5">銳鋒顧問有限公司</div>
+                    </div>
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-          </div>
-          <a href="#contact" class="nav-item">聯絡我們</a>
-          <a href="#join" class="nav-item">加入我們</a>
+
+            <nav class="dropdown-nav" id="dropdownNav">
+                <div class="dropdown-nav-inner max-w-7xl mx-auto px-6 md:px-10">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-1">
+                        <a href="#about">關於我們</a>
+                        <a href="#advantages">專業優勢</a>
+                        <a href="#business">核心業務</a>
+                        <a href="#services">業務範圍</a>
+                        <a href="#process">咨詢流程</a>
+                        <div class="has-submenu">
+                            <a href="#" class="nav-item" id="resourcesTrigger">
+                                資源中心 <span class="inline-block ml-1 text-xs transition-transform duration-300" id="resourcesArrow">▾</span>
+                            </a>
+                            <div class="submenu-dropdown" id="resourcesSubmenu">
+                                <a href="#market-report">市場報告</a>
+                                <a href="#company-report">公司報告</a>
+                            </div>
+                        </div>
+                        <a href="#contact">聯絡我們</a>
+                        <a href="#join">加入我們</a>
+                    </div>
+                </div>
+            </nav>
         </div>
-      </div>
-    </nav>
-  </div>
-</header>
+    </header>
 
-<!-- ========== Hero ========== -->
-<section id="top" class="hero">
-  <div class="hero-bg-img" id="heroBg"></div>
-  <div class="hero-slice"></div>
-  <div class="deco-lines"></div>
+    <!-- ========== Hero ========== -->
+    <section id="top" class="hero">
+        <div class="hero-bg-img" id="heroBg"></div>
+        <div class="hero-slice"></div>
+        <div class="deco-lines"></div>
 
-  <!-- 点阵装饰 -->
-  <div class="dot-grid" style="top:15%;left:5%;"></div>
-  <div class="dot-grid" style="bottom:20%;right:10%;opacity:0.08;"></div>
+        <div class="dot-grid" style="top:15%;left:5%;"></div>
+        <div class="dot-grid" style="bottom:20%;right:10%;opacity:0.08;"></div>
 
-  <!-- 左侧竖排文字 -->
-  <div class="absolute left-6 md:left-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
-    <div class="vertical-text">RUIFENG CONSULTING · HONG KONG · EST. 2014</div>
-  </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full pb-20">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8">
+                    <div class="reveal reveal-up flex items-center gap-4 mb-10">
+                        <div class="w-10 h-px bg-white/40"></div>
+                        <span class="text-white/60 text-xs tracking-widest-xl uppercase font-display font-medium">Business Intelligence</span>
+                    </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full pb-20">
-    <div class="grid lg:grid-cols-12 gap-8 items-center">
-      <div class="lg:col-span-8">
-        <div class="reveal reveal-up flex items-center gap-4 mb-10">
-          <div class="w-10 h-px bg-white/40"></div>
-          <span class="text-white/60 text-xs tracking-widest-xl uppercase font-display font-medium">Business Intelligence</span>
-        </div>
+                    <h1 class="reveal reveal-up reveal-delay-1 hero-title text-5xl md:text-7xl lg:text-8xl mb-8" id="heroTitle">
+                        讓商業視野<br>
+                        <span class="text-gold-gradient">超越界限</span>
+                    </h1>
 
-        <h1 class="reveal reveal-up reveal-delay-1 hero-title text-5xl md:text-7xl lg:text-8xl mb-8" id="heroTitle">
-          讓商業視野<br>
-          <span class="text-gold-gradient">超越界限</span>
-        </h1>
+                    <p class="reveal reveal-up reveal-delay-2 text-lg md:text-xl text-white/60 font-light mb-3 max-w-xl">
+                        洞悉香港市場，以精準數據驅動商業策略。
+                    </p>
+                    <p class="reveal reveal-up reveal-delay-3 text-sm text-white/40 max-w-xl mb-12 leading-relaxed">
+                        銳鋒顧問致力於協助企業在複雜多變的商業環境中，釐清戰略方向，實現可持續的業務增長。
+                    </p>
 
-        <p class="reveal reveal-up reveal-delay-2 text-lg md:text-xl text-white/60 font-light mb-3 max-w-xl">
-          洞悉香港市場，以精準數據驅動商業策略。
-        </p>
-        <p class="reveal reveal-up reveal-delay-3 text-sm text-white/40 max-w-xl mb-12 leading-relaxed">
-          TOP MARKET 銳鋒顧問致力於協助企業在複雜多變的商業環境中，釐清戰略方向，實現可持續的業務增長。
-        </p>
+                    <div class="reveal reveal-up reveal-delay-4 flex flex-wrap gap-4">
+                        <a href="#business" class="btn-primary">
+                            探索服務
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                        <a href="#contact" class="btn-outline">聯絡我們</a>
+                    </div>
+                </div>
 
-        <div class="reveal reveal-up reveal-delay-4 flex flex-wrap gap-4">
-          <a href="#business" class="btn-primary">
-            探索服務
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="#contact" class="btn-outline">聯絡我們</a>
-        </div>
-      </div>
-
-      <!-- 右侧数据卡片（错位） -->
-      <div class="lg:col-span-4 hidden lg:block">
-        <div class="reveal reveal-right reveal-delay-5 space-y-4">
-          <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6">
-            <div class="font-display font-bold text-4xl text-white mb-1 stat-number" data-target="200">0</div>
-            <div class="text-white/40 text-xs tracking-wider">+ 成功案例</div>
-          </div>
-          <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 ml-12">
-            <div class="font-display font-bold text-4xl text-white mb-1 stat-number" data-target="10">0</div>
-            <div class="text-white/40 text-xs tracking-wider">年行業經驗</div>
-          </div>
-          <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 ml-6">
-            <div class="font-display font-bold text-4xl text-white mb-1 stat-number" data-target="98">0</div>
-            <div class="text-white/40 text-xs tracking-wider">% 客戶滿意度</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 底部滚动提示 -->
-    <div class="reveal reveal-up reveal-delay-6 absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-      <span class="text-white/30 text-xs tracking-widest font-display">SCROLL</span>
-      <div class="w-px h-10 bg-gradient-to-b from-white/30 to-transparent"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 斜切分隔 -->
-<div class="section-divider bg-bg">
-  <div class="divider-slant bg-bg-soft" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);"></div>
-</div>
-
-<!-- ========== 關於我們（不对称布局） ========== -->
-<section id="about" class="py-24 md:py-32 bg-bg-soft relative overflow-hidden">
-  <!-- 大号装饰文字 -->
-  <div class="deco-big-text absolute -right-4 top-10">ABOUT</div>
-
-  <!-- 浮动几何 -->
-  <div class="float-shape" style="top:20%;left:5%;width:150px;height:150px;border:1px solid white;border-radius:50%;"></div>
-  <div class="float-shape" style="bottom:15%;right:15%;width:100px;height:100px;border:1px solid white;animation-delay:-6s;"></div>
-
-  <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-      <!-- 左侧：文字（错位） -->
-      <div class="lg:col-span-5 lg:pt-24">
-        <div class="reveal reveal-left mb-6">
-          <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">01 / About Us</span>
-        </div>
-        <h2 class="reveal reveal-left reveal-delay-1 font-serif font-bold text-3xl md:text-5xl mb-8 leading-tight">
-          以銳見洞察行業<br>
-          用鋒利攻破市場
-        </h2>
-        <div class="reveal reveal-left reveal-delay-2 space-y-5 text-white/60 leading-relaxed text-sm">
-          <p>
-            <span class="text-white font-medium">TOP MARKET 銳鋒顧問有限公司</span>是一家整合市場數據蒐集、消費者行為研究及品牌營運策略的全方位商業諮詢機構。
-          </p>
-          <p>
-            專注為商業服務、零售、餐飲與美妝等本地行業提供端到端的解決方案。
-          </p>
-          <p>我們不只是顧問，更是你並肩的商業夥伴。</p>
-        </div>
-
-        <div class="reveal reveal-left reveal-delay-3 mt-10 flex items-center gap-5">
-          <div class="w-12 h-px bg-white/20"></div>
-          <div class="flex items-center gap-4 text-white/80 font-serif text-sm tracking-wider">
-            <span>精準</span>
-            <span class="w-1 h-1 rounded-full bg-white/30"></span>
-            <span>務實</span>
-            <span class="w-1 h-1 rounded-full bg-white/30"></span>
-            <span>可持續</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 右侧：图片（重叠 + 装饰） -->
-      <div class="lg:col-span-7 relative">
-        <div class="reveal reveal-scale relative">
-          <!-- 主图 -->
-          <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="8">
-            <div class="tilt-card-inner">
-              <img src="https://picsum.photos/700/500?random=2" alt="商業顧問" class="w-full h-[450px] md:h-[550px] object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-bg-soft/90 via-transparent to-transparent"></div>
+                <div class="lg:col-span-4 hidden lg:block">
+                    <div class="reveal reveal-right reveal-delay-5 space-y-4">
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6">
+                            <div class="font-display font-bold text-4xl text-white mb-1 stat-number" data-target="200">0</div>
+                            <div class="text-white/40 text-xs tracking-wider">+ 成功案例</div>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 ml-12">
+                            <div class="font-display font-bold text-4xl text-white mb-1 stat-number" data-target="10">0</div>
+                            <div class="text-white/40 text-xs tracking-wider">年行業經驗</div>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 ml-6">
+                            <div class="font-display font-bold text-4xl text-white mb-1 stat-number" data-target="98">0</div>
+                            <div class="text-white/40 text-xs tracking-wider">% 客戶滿意度</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <!-- 装饰框 -->
-          <div class="absolute -bottom-6 -right-6 w-full h-full border border-white/10 -z-10 rounded-sm"></div>
-
-          <!-- 浮动标签卡片 -->
-          <div class="absolute -bottom-8 -left-8 bg-bg-card border border-white/10 rounded-sm px-8 py-6 backdrop-blur-md">
-            <div class="font-display font-bold text-3xl text-white mb-1">TOP MARKET</div>
-            <div class="text-white/40 text-xs tracking-widest">SINCE 2014 · HONG KONG</div>
-          </div>
-
-          <!-- 数字装饰 -->
-          <div class="absolute -top-6 right-10 font-display font-black text-8xl text-white/[0.03] leading-none">01</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 波浪分隔 -->
-<div class="section-divider bg-bg-soft">
-  <div class="divider-slant bg-bg" style="clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);"></div>
-</div>
-
-<!-- ========== 專業優勢（重叠卡片布局） ========== -->
-<section id="advantages" class="py-24 md:py-32 bg-bg relative overflow-hidden">
-  <div class="deco-big-text absolute left-0 top-20">ADVANTAGE</div>
-
-  <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
-    <!-- 标题（右对齐，打破对称） -->
-    <div class="flex justify-end mb-20">
-      <div class="text-right max-w-lg">
-        <div class="reveal reveal-right mb-4">
-          <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">02 / Our Advantages</span>
-        </div>
-        <h2 class="reveal reveal-right reveal-delay-1 font-serif font-bold text-3xl md:text-5xl leading-tight">
-          三大核心優勢<br>
-          驅動商業增長
-        </h2>
-      </div>
-    </div>
-
-    <!-- 卡片阶梯式排列 -->
-    <div class="grid md:grid-cols-3 gap-6 md:gap-8 relative">
-      <!-- 优势1 -->
-      <div class="reveal reveal-up md:mt-0">
-        <div class="bg-bg-card border border-border rounded-sm p-8 md:p-10 h-full tilt-card group" data-tilt data-tilt-max="10">
-          <div class="tilt-card-inner">
-            <div class="w-14 h-14 rounded-sm border border-white/15 flex items-center justify-center mb-8 bg-bg-deep tilt-parallax" data-tilt-depth="0.15">
-              <span class="font-display font-bold text-xl text-white/80">01</span>
+            <div class="reveal reveal-up reveal-delay-6 absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+                <span class="text-white/30 text-xs tracking-widest font-display">SCROLL</span>
+                <div class="w-px h-10 bg-gradient-to-b from-white/30 to-transparent"></div>
             </div>
-            <h3 class="font-serif font-bold text-xl mb-4 text-white tilt-parallax" data-tilt-depth="0.08">數據驅動</h3>
-            <p class="text-white/50 leading-relaxed text-sm tilt-parallax" data-tilt-depth="0.05">
-              摒棄直覺決策，我們從龐雜的數據中萃取關鍵商業信號，確保每項策略均以真實數據為基礎。
-            </p>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <!-- 优势2（中间下沉） -->
-      <div class="reveal reveal-up reveal-delay-1 md:mt-16">
-        <div class="bg-bg-card border border-border rounded-sm p-8 md:p-10 h-full tilt-card group" data-tilt data-tilt-max="10">
-          <div class="tilt-card-inner">
-            <div class="w-14 h-14 rounded-sm border border-white/15 flex items-center justify-center mb-8 bg-bg-deep tilt-parallax" data-tilt-depth="0.15">
-              <span class="font-display font-bold text-xl text-white/80">02</span>
+    <!-- 斜切分隔 -->
+    <div class="section-divider bg-bg">
+        <div class="divider-slant bg-bg-soft" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);"></div>
+    </div>
+
+    <!-- ========== 關於我們 ========== -->
+    <section id="about" class="py-24 md:py-32 bg-bg-soft relative overflow-hidden">
+        <div class="deco-big-text absolute -right-4 top-10">ABOUT</div>
+
+        <div class="float-shape" style="top:20%;left:5%;width:150px;height:150px;border:1px solid white;border-radius:50%;"></div>
+        <div class="float-shape" style="bottom:15%;right:15%;width:100px;height:100px;border:1px solid white;animation-delay:-6s;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5 lg:pt-24">
+                    <div class="reveal reveal-left mb-6">
+                        <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">01 / About Us</span>
+                    </div>
+                    <h2 class="reveal reveal-left reveal-delay-1 font-serif font-bold text-3xl md:text-5xl mb-8 leading-tight">
+                        以銳見洞察行業<br>
+                        用鋒利攻破市場
+                    </h2>
+                    <div class="reveal reveal-left reveal-delay-2 space-y-5 text-white/60 leading-relaxed text-sm">
+                        <p>
+                            <span class="text-white font-medium">銳鋒顧問有限公司</span>是一家整合市場數據蒐集、消費者行為研究及品牌營運策略的全方位商業諮詢機構。
+                        </p>
+                        <p>
+                            專注為商業服務、零售、餐飲與美妝等本地行業提供端到端的解決方案。
+                        </p>
+                        <p>我們不只是顧問，更是你並肩的商業夥伴。</p>
+                    </div>
+
+                    <div class="reveal reveal-left reveal-delay-3 mt-10 flex items-center gap-5">
+                        <div class="w-12 h-px bg-white/20"></div>
+                        <div class="flex items-center gap-4 text-white/80 font-serif text-sm tracking-wider">
+                            <span>精準</span>
+                            <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                            <span>務實</span>
+                            <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                            <span>可持續</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 relative">
+                    <div class="reveal reveal-scale relative">
+                        <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="8">
+                            <div class="tilt-card-inner">
+                                <img src="https://picsum.photos/700/500?random=2" alt="商業顧問" class="w-full h-[450px] md:h-[550px] object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-bg-soft/90 via-transparent to-transparent"></div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-full h-full border border-white/10 -z-10 rounded-sm"></div>
+                        <div class="absolute -bottom-8 -left-8 bg-bg-card border border-white/10 rounded-sm px-8 py-6 backdrop-blur-md">
+                            <div class="font-display font-bold text-3xl text-white mb-1">TOP MARKET</div>
+                            <div class="text-white/40 text-xs tracking-widest">SINCE 2014 · HONG KONG</div>
+                        </div>
+                        <div class="absolute -top-6 right-10 font-display font-black text-8xl text-white/[0.03] leading-none">01</div>
+                    </div>
+                </div>
             </div>
-            <h3 class="font-serif font-bold text-xl mb-4 text-white tilt-parallax" data-tilt-depth="0.08">本地深耕</h3>
-            <p class="text-white/50 leading-relaxed text-sm tilt-parallax" data-tilt-depth="0.05">
-              植根香港，我們對本地法規與營商環境具備深刻理解，能有效協助企業駕馭市場波動，精準規避潛在風險。
-            </p>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <!-- 优势3 -->
-      <div class="reveal reveal-up reveal-delay-2 md:mt-8">
-        <div class="bg-bg-card border border-border rounded-sm p-8 md:p-10 h-full tilt-card group" data-tilt data-tilt-max="10">
-          <div class="tilt-card-inner">
-            <div class="w-14 h-14 rounded-sm border border-white/15 flex items-center justify-center mb-8 bg-bg-deep tilt-parallax" data-tilt-depth="0.15">
-              <span class="font-display font-bold text-xl text-white/80">03</span>
+    <!-- 波浪分隔 -->
+    <div class="section-divider bg-bg-soft">
+        <div class="divider-slant bg-bg" style="clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);"></div>
+    </div>
+
+    <!-- ========== 專業優勢 ========== -->
+    <section id="advantages" class="py-24 md:py-32 bg-bg relative overflow-hidden">
+        <div class="deco-big-text absolute left-0 top-20">ADVANTAGE</div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+            <div class="flex justify-end mb-20">
+                <div class="text-right max-w-lg">
+                    <div class="reveal reveal-right mb-4">
+                        <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">02 / Our Advantages</span>
+                    </div>
+                    <h2 class="reveal reveal-right reveal-delay-1 font-serif font-bold text-3xl md:text-5xl leading-tight">
+                        三大核心優勢<br>
+                        驅動商業增長
+                    </h2>
+                </div>
             </div>
-            <h3 class="font-serif font-bold text-xl mb-4 text-white tilt-parallax" data-tilt-depth="0.08">敏捷反應</h3>
-            <p class="text-white/50 leading-relaxed text-sm tilt-parallax" data-tilt-depth="0.05">
-              面對瞬息萬變的商業環境，我們保持極高的市場敏銳度，以靈活高效的顧問服務協助客戶迅速調整策略。
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- 斜切分隔 -->
-<div class="section-divider bg-bg">
-  <div class="divider-slant bg-bg-soft" style="clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);"></div>
-</div>
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 relative">
+                <div class="reveal reveal-up md:mt-0">
+                    <div class="bg-bg-card border border-border rounded-sm p-8 md:p-10 h-full tilt-card group" data-tilt data-tilt-max="10">
+                        <div class="tilt-card-inner">
+                            <div class="w-14 h-14 rounded-sm border border-white/15 flex items-center justify-center mb-8 bg-bg-deep tilt-parallax" data-tilt-depth="0.15">
+                                <span class="font-display font-bold text-xl text-white/80">01</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl mb-4 text-white tilt-parallax" data-tilt-depth="0.08">數據驅動</h3>
+                            <p class="text-white/50 leading-relaxed text-sm tilt-parallax" data-tilt-depth="0.05">
+                                摒棄直覺決策，我們從龐雜的數據中萃取關鍵商業信號，確保每項策略均以真實數據為基礎。
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-<!-- ========== 核心業務（左右交错布局） ========== -->
-<section id="business" class="py-24 md:py-32 bg-bg-soft relative overflow-hidden">
-  <div class="float-shape" style="top:10%;right:5%;width:120px;height:120px;border:1px solid white;border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;animation-delay:-4s;"></div>
+                <div class="reveal reveal-up reveal-delay-1 md:mt-16">
+                    <div class="bg-bg-card border border-border rounded-sm p-8 md:p-10 h-full tilt-card group" data-tilt data-tilt-max="10">
+                        <div class="tilt-card-inner">
+                            <div class="w-14 h-14 rounded-sm border border-white/15 flex items-center justify-center mb-8 bg-bg-deep tilt-parallax" data-tilt-depth="0.15">
+                                <span class="font-display font-bold text-xl text-white/80">02</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl mb-4 text-white tilt-parallax" data-tilt-depth="0.08">本地深耕</h3>
+                            <p class="text-white/50 leading-relaxed text-sm tilt-parallax" data-tilt-depth="0.05">
+                                植根香港，我們對本地法規與營商環境具備深刻理解，能有效協助企業駕馭市場波動，精準規避潛在風險。
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-  <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
-    <div class="text-center mb-20">
-      <div class="reveal reveal-up mb-4">
-        <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">03 / Core Business</span>
-      </div>
-      <h2 class="reveal reveal-up reveal-delay-1 font-serif font-bold text-3xl md:text-5xl">核心業務</h2>
-    </div>
-
-    <!-- 业务1：左图右文 -->
-    <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-24">
-      <div class="lg:col-span-7 reveal reveal-left">
-        <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="6">
-          <div class="tilt-card-inner">
-            <img src="https://picsum.photos/700/450?random=6" alt="品牌管理與優化" class="w-full h-[350px] md:h-[420px] object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-bg-soft/60 to-transparent"></div>
-          </div>
-        </div>
-      </div>
-      <div class="lg:col-span-5">
-        <div class="reveal reveal-right">
-          <div class="font-display text-xs tracking-widest text-white/30 mb-4">01 / BRAND MANAGEMENT</div>
-          <h3 class="font-serif font-bold text-2xl md:text-3xl mb-5 text-white">品牌管理與優化</h3>
-          <p class="text-white/50 text-sm leading-relaxed mb-6">提升品牌價值、優化營運管理、精準落地執行。我們協助企業建立清晰的品牌定位，從策略到執行全程陪伴。</p>
-          <div class="flex items-center gap-3 text-white/70 text-sm font-medium group cursor-pointer w-fit">
-            <span>了解更多</span>
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 业务2：左文右图（交错） -->
-    <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-24">
-      <div class="lg:col-span-5 lg:order-1 order-2">
-        <div class="reveal reveal-left">
-          <div class="font-display text-xs tracking-widest text-white/30 mb-4">02 / STRATEGY PLANNING</div>
-          <h3 class="font-serif font-bold text-2xl md:text-3xl mb-5 text-white">商業戰略規劃</h3>
-          <ul class="text-white/50 text-sm leading-loose space-y-2 mb-6">
-            <li>— 市場洞察與分析</li>
-            <li>— AI 人工智能</li>
-            <li>— 策略研究</li>
-            <li>— 全渠道情報</li>
-            <li>— 頂層架構與商業藍圖</li>
-          </ul>
-          <div class="flex items-center gap-3 text-white/70 text-sm font-medium group cursor-pointer w-fit">
-            <span>了解更多</span>
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </div>
-        </div>
-      </div>
-      <div class="lg:col-span-7 lg:order-2 order-1 reveal reveal-right">
-        <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="6">
-          <div class="tilt-card-inner">
-            <img src="https://picsum.photos/700/450?random=7" alt="商業戰略規劃" class="w-full h-[350px] md:h-[420px] object-cover">
-            <div class="absolute inset-0 bg-gradient-to-l from-bg-soft/60 to-transparent"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 业务3：左图右文 -->
-    <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-      <div class="lg:col-span-7 reveal reveal-left">
-        <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="6">
-          <div class="tilt-card-inner">
-            <img src="https://picsum.photos/700/450?random=8" alt="市場洞察與數據分析" class="w-full h-[350px] md:h-[420px] object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-bg-soft/60 to-transparent"></div>
-          </div>
-        </div>
-      </div>
-      <div class="lg:col-span-5">
-        <div class="reveal reveal-right">
-          <div class="font-display text-xs tracking-widest text-white/30 mb-4">03 / MARKET INSIGHTS</div>
-          <h3 class="font-serif font-bold text-2xl md:text-3xl mb-5 text-white">市場洞察與數據分析</h3>
-          <ul class="text-white/50 text-sm leading-loose space-y-2 mb-6">
-            <li>— 商業戰略與規劃</li>
-            <li>— 評估市場與可行性</li>
-          </ul>
-          <div class="flex items-center gap-3 text-white/70 text-sm font-medium group cursor-pointer w-fit">
-            <span>了解更多</span>
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 服務範圍（竖条手风琴） ========== -->
-<section id="services" class="py-24 md:py-32 bg-bg relative overflow-hidden">
-  <div class="deco-big-text absolute -right-4 top-10">SERVICES</div>
-
-  <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-      <div>
-        <div class="reveal reveal-up mb-4">
-          <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">04 / Service Scope</span>
-        </div>
-        <h2 class="reveal reveal-up reveal-delay-1 font-serif font-bold text-3xl md:text-5xl">服務範圍</h2>
-      </div>
-      <p class="reveal reveal-up reveal-delay-2 text-white/40 text-sm max-w-sm leading-relaxed">
-        九大專業服務領域，覆蓋從數據蒐集到策略落地的全鏈路，為企業提供全方位商業支援。
-      </p>
-    </div>
-
-    <!-- 竖条手风琴 -->
-    <div class="accordion-bars reveal reveal-up reveal-delay-3">
-      <div class="acc-bar">
-        <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=11');"></div>
-        <div class="acc-bar-overlay"></div>
-        <div class="acc-bar-content">
-          <div class="acc-bar-num">01</div>
-          <div class="acc-bar-title">量化調查</div>
-          <div class="acc-bar-detail">透過大規模問卷與數據分析，精準量化市場趨勢與消費者行為模式，為決策提供數據支撐。</div>
-        </div>
-      </div>
-      <div class="acc-bar">
-        <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=12');"></div>
-        <div class="acc-bar-overlay"></div>
-        <div class="acc-bar-content">
-          <div class="acc-bar-num">02</div>
-          <div class="acc-bar-title">深度採訪</div>
-          <div class="acc-bar-detail">一對一深度訪談，挖掘消費者真實需求與決策動機，獲取深入的質化洞察。</div>
-        </div>
-      </div>
-      <div class="acc-bar">
-        <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=13');"></div>
-        <div class="acc-bar-overlay"></div>
-        <div class="acc-bar-content">
-          <div class="acc-bar-num">03</div>
-          <div class="acc-bar-title">AI大數據</div>
-          <div class="acc-bar-detail">運用 AI 技術自動化擷取與分析海量數據，快速識別市場信號與新興趨勢。</div>
-        </div>
-      </div>
-      <div class="acc-bar">
-        <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=14');"></div>
-        <div class="acc-bar-overlay"></div>
-        <div class="acc-bar-content">
-          <div class="acc-bar-num">04</div>
-          <div class="acc-bar-title">市場進入</div>
-          <div class="acc-bar-detail">制定全方位市場進入方案，涵蓋品牌定位、定價策略、渠道佈局與推廣計劃。</div>
-        </div>
-      </div>
-      <div class="acc-bar">
-        <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=15');"></div>
-        <div class="acc-bar-overlay"></div>
-        <div class="acc-bar-content">
-          <div class="acc-bar-num">05</div>
-          <div class="acc-bar-title">品牌分析</div>
-          <div class="acc-bar-detail">全面診斷品牌現狀，識別優勢與瓶頸，制定系統性的優化策略路線圖。</div>
-        </div>
-      </div>
-      <div class="acc-bar">
-        <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=16');"></div>
-        <div class="acc-bar-overlay"></div>
-        <div class="acc-bar-content">
-          <div class="acc-bar-num">06</div>
-          <div class="acc-bar-title">行業顧問</div>
-          <div class="acc-bar-detail">針對零售、餐飲、美妝等特定行業提供深度顧問服務與專項解決方案。</div>
-        </div>
-      </div>
-      <div class="acc-bar">
-        <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=17');"></div>
-        <div class="acc-bar-overlay"></div>
-        <div class="acc-bar-content">
-          <div class="acc-bar-num">07</div>
-          <div class="acc-bar-title">落地執行</div>
-          <div class="acc-bar-detail">從策略到執行全程陪伴，協助企業將方案高效落地，確保每一步精準到位。</div>
-        </div>
-      </div>
-      <div class="acc-bar">
-        <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=18');"></div>
-        <div class="acc-bar-overlay"></div>
-        <div class="acc-bar-content">
-          <div class="acc-bar-num">08</div>
-          <div class="acc-bar-title">趨勢監察</div>
-          <div class="acc-bar-detail">持續追蹤市場動態，提供即時趨勢報告與預警，助您搶佔先機。</div>
-        </div>
-      </div>
-      <div class="acc-bar">
-        <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=19');"></div>
-        <div class="acc-bar-overlay"></div>
-        <div class="acc-bar-content">
-          <div class="acc-bar-num">09</div>
-          <div class="acc-bar-title">報告跟進</div>
-          <div class="acc-bar-detail">按週期提供詳細分析報告，持續跟進項目進度，確保策略有效執行。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 斜切分隔 -->
-<div class="section-divider bg-bg">
-  <div class="divider-slant bg-bg-soft" style="clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);"></div>
-</div>
-
-<!-- ========== 專案流程 ========== -->
-<section id="process" class="py-24 md:py-32 bg-bg-soft relative overflow-hidden">
-  <div class="float-shape" style="bottom:10%;left:8%;width:130px;height:130px;border:1px solid white;animation-delay:-8s;"></div>
-
-  <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
-    <div class="text-center mb-20">
-      <div class="reveal reveal-up mb-4">
-        <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">05 / Consulting Process</span>
-      </div>
-      <div class="reveal reveal-up reveal-delay-1 text-white/60 font-serif text-sm tracking-widest mb-4">
-        全程監控 · 數據真實 · 專業執行
-      </div>
-      <h2 class="reveal reveal-up reveal-delay-2 font-serif font-bold text-3xl md:text-5xl">專案流程</h2>
-    </div>
-
-    <!-- 时间线 -->
-    <div class="relative mb-20">
-      <div class="timeline-line hidden md:block"></div>
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
-        <div class="timeline-step reveal reveal-up flex flex-col items-center text-center">
-          <div class="timeline-dot mb-6"></div>
-          <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 01</div>
-          <h4 class="font-serif font-bold text-lg mb-2 text-white">界定需求</h4>
-          <p class="text-white/40 text-xs leading-relaxed">深入了解企業目標與痛點，明確專案範疇</p>
-        </div>
-        <div class="timeline-step reveal reveal-up reveal-delay-1 flex flex-col items-center text-center">
-          <div class="timeline-dot mb-6"></div>
-          <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 02</div>
-          <h4 class="font-serif font-bold text-lg mb-2 text-white">蒐集數據</h4>
-          <p class="text-white/40 text-xs leading-relaxed">多渠道數據擷取，確保資訊全面與真實</p>
-        </div>
-        <div class="timeline-step reveal reveal-up reveal-delay-2 flex flex-col items-center text-center">
-          <div class="timeline-dot mb-6"></div>
-          <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 03</div>
-          <h4 class="font-serif font-bold text-lg mb-2 text-white">制定策略</h4>
-          <p class="text-white/40 text-xs leading-relaxed">以數據為基礎，建構可執行的商業方案</p>
-        </div>
-        <div class="timeline-step reveal reveal-up reveal-delay-3 flex flex-col items-center text-center">
-          <div class="timeline-dot mb-6"></div>
-          <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 04</div>
-          <h4 class="font-serif font-bold text-lg mb-2 text-white">實施支援</h4>
-          <p class="text-white/40 text-xs leading-relaxed">協助落地執行，提供全程專業指導</p>
-        </div>
-        <div class="timeline-step reveal reveal-up reveal-delay-4 flex flex-col items-center text-center">
-          <div class="timeline-dot mb-6"></div>
-          <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 05</div>
-          <h4 class="font-serif font-bold text-lg mb-2 text-white">持續追蹤</h4>
-          <p class="text-white/40 text-xs leading-relaxed">定期回顧成效，優化調整策略方向</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 底部说明 + 图片 -->
-    <div class="grid lg:grid-cols-2 gap-10 items-center">
-      <div class="reveal reveal-left order-2 lg:order-1">
-        <p class="text-white/50 leading-loose text-sm">
-          我們設有內部品質監控團隊，透過抽樣覆核、採訪抽查、數據交叉驗證等方式，確保每一個環節的數據收集、分析與報告都具有高度的真實性與專業性。
-        </p>
-        <p class="text-white/50 leading-loose text-sm mt-4">
-          從專案啟動到最終交付，每一步都經過嚴謹的品質把關，讓客戶放心依託我們的專業服務。
-        </p>
-        <div class="mt-8 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-sm border border-white/15 flex items-center justify-center bg-bg-deep">
-            <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <div>
-            <div class="text-white text-sm font-medium">品質保證</div>
-            <div class="text-white/40 text-xs">三重驗證機制 · 數據真實可靠</div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal reveal-right reveal-delay-2 order-1 lg:order-2">
-        <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="5">
-          <div class="tilt-card-inner">
-            <img src="https://picsum.photos/700/400?random=9" alt="專案流程" class="w-full h-72 md:h-80 object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-bg-soft/40 to-transparent"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 聯絡我們 ========== -->
-<section id="contact" class="py-24 md:py-32 bg-bg relative overflow-hidden">
-  <div class="deco-big-text absolute left-0 bottom-10">CONTACT</div>
-
-  <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
-      <!-- 左侧文字 -->
-      <div class="lg:col-span-5">
-        <div class="reveal reveal-left mb-4">
-          <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">06 / Contact Us</span>
-        </div>
-        <h2 class="reveal reveal-left reveal-delay-1 font-serif font-bold text-3xl md:text-5xl mb-6 leading-tight">
-          啟動您的<br>數據驅動增長之旅
-        </h2>
-        <p class="reveal reveal-left reveal-delay-2 text-white/50 leading-relaxed text-sm mb-10">
-          與 TOP MARKET 銳鋒顧問的專業團隊展開對話，探索驅動您業務增長的無限可能。
-        </p>
-
-        <div class="reveal reveal-left reveal-delay-3 flex items-center gap-4 mb-10 text-white/60 text-sm">
-          <span class="inline-flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-green-500"></span>
-            24 小時內專人回覆
-          </span>
-          <span class="w-1 h-1 rounded-full bg-white/20"></span>
-          <span>免費初步諮詢</span>
-        </div>
-
-        <!-- Email -->
-        <div class="reveal reveal-left reveal-delay-4 mb-5 p-5 border border-white/10 rounded-sm hover:border-white/20 transition-colors group cursor-pointer">
-          <div class="flex items-center gap-4">
-            <div class="w-11 h-11 rounded-sm border border-white/15 flex items-center justify-center bg-bg-deep group-hover:border-white/30 transition-colors">
-              <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <div class="reveal reveal-up reveal-delay-2 md:mt-8">
+                    <div class="bg-bg-card border border-border rounded-sm p-8 md:p-10 h-full tilt-card group" data-tilt data-tilt-max="10">
+                        <div class="tilt-card-inner">
+                            <div class="w-14 h-14 rounded-sm border border-white/15 flex items-center justify-center mb-8 bg-bg-deep tilt-parallax" data-tilt-depth="0.15">
+                                <span class="font-display font-bold text-xl text-white/80">03</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl mb-4 text-white tilt-parallax" data-tilt-depth="0.08">敏捷反應</h3>
+                            <p class="text-white/50 leading-relaxed text-sm tilt-parallax" data-tilt-depth="0.05">
+                                面對瞬息萬變的商業環境，我們保持極高的市場敏銳度，以靈活、高效的顧問服務協助客戶迅速調整策略，把握轉瞬即逝的商機。
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-              <div class="text-white/40 text-[10px] tracking-widest mb-1">EMAIL</div>
-              <a href="mailto:contact@topmarket.com.hk" class="text-white text-sm hover:text-white/80 transition-colors">contact@topmarket.com.hk</a>
-            </div>
-          </div>
         </div>
+    </section>
 
-        <!-- LinkedIn -->
-        <div class="reveal reveal-left reveal-delay-5 p-5 border border-white/10 rounded-sm hover:border-white/20 transition-colors group cursor-pointer">
-          <div class="flex items-center gap-4">
-            <div class="w-11 h-11 rounded-sm border border-white/15 flex items-center justify-center bg-bg-deep group-hover:border-white/30 transition-colors">
-              <svg class="w-5 h-5 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </div>
-            <div>
-              <div class="text-white/40 text-[10px] tracking-widest mb-1">LINKEDIN</div>
-              <a href="#" class="text-white text-sm hover:text-white/80 transition-colors">TOP MARKET 銳鋒顧問</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 右侧表单 -->
-      <div class="lg:col-span-7">
-        <form class="reveal reveal-right reveal-delay-2 bg-bg-card border border-border rounded-sm p-8 md:p-10 space-y-5" id="contactForm">
-          <div class="grid md:grid-cols-2 gap-5">
-            <div>
-              <label class="block text-white/40 text-[10px] tracking-widest mb-3">姓名</label>
-              <input type="text" class="form-input" placeholder="請輸入您的姓名" required>
-            </div>
-            <div>
-              <label class="block text-white/40 text-[10px] tracking-widest mb-3">電郵</label>
-              <input type="email" class="form-input" placeholder="請輸入您的電郵" required>
-            </div>
-          </div>
-          <div>
-            <label class="block text-white/40 text-[10px] tracking-widest mb-3">公司</label>
-            <input type="text" class="form-input" placeholder="請輸入公司名稱">
-          </div>
-          <div>
-            <label class="block text-white/40 text-[10px] tracking-widest mb-3">留言</label>
-            <textarea class="form-input min-h-[120px] resize-none" placeholder="請簡述您的需求或問題..." required></textarea>
-          </div>
-          <button type="submit" class="btn-primary w-full justify-center">
-            提交諮詢
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </button>
-          <p class="text-white/30 text-xs text-center">
-            提交即表示您同意我們的隱私政策，我們將於 24 小時內與您聯絡。
-          </p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 页脚 ========== -->
-<footer class="bg-bg-deep border-t border-white/5 py-16">
-  <div class="max-w-7xl mx-auto px-6 md:px-10">
-    <div class="grid md:grid-cols-12 gap-10 mb-12">
-      <!-- Logo & 简介 -->
-      <div class="md:col-span-5">
-        <div class="flex items-center gap-3 mb-5">
-          <div class="logo-mark">
-            <span>TM</span>
-          </div>
-          <div>
-            <div class="text-white font-display font-bold text-sm tracking-widest">TOP MARKET</div>
-            <div class="text-white/40 text-[10px] tracking-widest mt-0.5">銳鋒顧問有限公司</div>
-          </div>
-        </div>
-        <p class="text-white/40 text-sm leading-relaxed max-w-md">
-          整合市場數據蒐集、消費者行為研究及品牌營運策略的全方位商業諮詢機構。以銳見洞察行業，用鋒利攻破市場。
-        </p>
-      </div>
-
-      <!-- 快速链接 -->
-      <div class="md:col-span-3">
-        <h5 class="text-white/60 font-medium text-xs tracking-widest mb-5">快速連結</h5>
-        <ul class="space-y-3 text-sm">
-          <li><a href="#about" class="text-white/40 hover:text-white transition-colors">關於我們</a></li>
-          <li><a href="#business" class="text-white/40 hover:text-white transition-colors">核心業務</a></li>
-          <li><a href="#services" class="text-white/40 hover:text-white transition-colors">服務範圍</a></li>
-          <li><a href="#contact" class="text-white/40 hover:text-white transition-colors">聯絡我們</a></li>
-        </ul>
-      </div>
-
-      <!-- 联系 -->
-      <div class="md:col-span-4">
-        <h5 class="text-white/60 font-medium text-xs tracking-widest mb-5">聯絡資訊</h5>
-        <ul class="space-y-3 text-sm text-white/40">
-          <li>contact@topmarket.com.hk</li>
-          <li>TOP MARKET Consulting Limited</li>
-          <li>Hong Kong</li>
-        </ul>
-      </div>
+    <!-- 斜切分隔 -->
+    <div class="section-divider bg-bg">
+        <div class="divider-slant bg-bg-soft" style="clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);"></div>
     </div>
 
-    <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-white/30 text-xs">© 2024 TOP MARKET 銳鋒顧問有限公司. All Rights Reserved.</p>
-      <div class="flex items-center gap-6">
-        <a href="#" class="text-white/30 hover:text-white transition-colors text-xs">隱私政策</a>
-        <a href="#" class="text-white/30 hover:text-white transition-colors text-xs">服務條款</a>
-      </div>
+    <!-- ========== 核心業務 ========== -->
+    <section id="business" class="py-24 md:py-32 bg-bg-soft relative overflow-hidden">
+        <div class="float-shape" style="top:10%;right:5%;width:120px;height:120px;border:1px solid white;border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;animation-delay:-4s;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+            <div class="text-center mb-20">
+                <div class="reveal reveal-up mb-4">
+                    <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">03 / Core Business</span>
+                </div>
+                <h2 class="reveal reveal-up reveal-delay-1 font-serif font-bold text-3xl md:text-5xl">核心業務</h2>
+            </div>
+
+            <!-- 业务1 -->
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-24">
+                <div class="lg:col-span-7 reveal reveal-left">
+                    <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="6">
+                        <div class="tilt-card-inner">
+                            <img src="https://picsum.photos/700/450?random=6" alt="品牌管理與優化" class="w-full h-[350px] md:h-[420px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-r from-bg-soft/60 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5">
+                    <div class="reveal reveal-right">
+                        <div class="font-display text-xs tracking-widest text-white/30 mb-4">01 / BRAND MANAGEMENT</div>
+                        <h3 class="font-serif font-bold text-2xl md:text-3xl mb-5 text-white">品牌管理與優化</h3>
+                        <p class="text-white/50 text-sm leading-relaxed mb-6">提升品牌、優化管理、精準落地</p>
+                        <div class="flex items-center gap-3 text-white/70 text-sm font-medium group cursor-pointer w-fit">
+                            <span>了解更多</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 业务2 -->
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-24">
+                <div class="lg:col-span-5 lg:order-1 order-2">
+                    <div class="reveal reveal-left">
+                        <div class="font-display text-xs tracking-widest text-white/30 mb-4">02 / STRATEGY PLANNING</div>
+                        <h3 class="font-serif font-bold text-2xl md:text-3xl mb-5 text-white">商業戰略規劃</h3>
+                        <ul class="text-white/50 text-sm leading-loose space-y-2 mb-6">
+                            <li>— 市場洞察與分析</li>
+                            <li>— AI人工智能</li>
+                            <li>— 策略研究</li>
+                            <li>— 全渠道情報</li>
+                            <li>— 頂層架構與商業藍圖</li>
+                        </ul>
+                        <div class="flex items-center gap-3 text-white/70 text-sm font-medium group cursor-pointer w-fit">
+                            <span>了解更多</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 lg:order-2 order-1 reveal reveal-right">
+                    <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="6">
+                        <div class="tilt-card-inner">
+                            <img src="https://picsum.photos/700/450?random=7" alt="商業戰略規劃" class="w-full h-[350px] md:h-[420px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-l from-bg-soft/60 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 业务3 -->
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+                <div class="lg:col-span-7 reveal reveal-left">
+                    <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="6">
+                        <div class="tilt-card-inner">
+                            <img src="https://picsum.photos/700/450?random=8" alt="市場洞察與數據分析" class="w-full h-[350px] md:h-[420px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-r from-bg-soft/60 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5">
+                    <div class="reveal reveal-right">
+                        <div class="font-display text-xs tracking-widest text-white/30 mb-4">03 / MARKET INSIGHTS</div>
+                        <h3 class="font-serif font-bold text-2xl md:text-3xl mb-5 text-white">市場洞察與數據分析</h3>
+                        <ul class="text-white/50 text-sm leading-loose space-y-2 mb-6">
+                            <li>— 商業戰略與規劃</li>
+                            <li>— 評估市場與可行性</li>
+                        </ul>
+                        <div class="flex items-center gap-3 text-white/70 text-sm font-medium group cursor-pointer w-fit">
+                            <span>了解更多</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 業務範圍（竖条手风琴） ========== -->
+    <section id="services" class="py-24 md:py-32 bg-bg relative overflow-hidden">
+        <div class="deco-big-text absolute -right-4 top-10">SERVICES</div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <div class="reveal reveal-up mb-4">
+                        <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">04 / Service Scope</span>
+                    </div>
+                    <h2 class="reveal reveal-up reveal-delay-1 font-serif font-bold text-3xl md:text-5xl">業務範圍</h2>
+                </div>
+                <p class="reveal reveal-up reveal-delay-2 text-white/40 text-sm max-w-sm leading-relaxed">
+                    九大專業服務領域，覆蓋從數據蒐集到策略落地的全鏈路。
+                </p>
+            </div>
+
+            <div class="accordion-bars reveal reveal-up reveal-delay-3">
+                <div class="acc-bar">
+                    <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=11');"></div>
+                    <div class="acc-bar-overlay"></div>
+                    <div class="acc-bar-content">
+                        <div class="acc-bar-num">01</div>
+                        <div class="acc-bar-title">量化調查</div>
+                    </div>
+                </div>
+                <div class="acc-bar">
+                    <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=12');"></div>
+                    <div class="acc-bar-overlay"></div>
+                    <div class="acc-bar-content">
+                        <div class="acc-bar-num">02</div>
+                        <div class="acc-bar-title">深度採訪</div>
+                    </div>
+                </div>
+                <div class="acc-bar">
+                    <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=13');"></div>
+                    <div class="acc-bar-overlay"></div>
+                    <div class="acc-bar-content">
+                        <div class="acc-bar-num">03</div>
+                        <div class="acc-bar-title">AI大數據收集</div>
+                    </div>
+                </div>
+                <div class="acc-bar">
+                    <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=14');"></div>
+                    <div class="acc-bar-overlay"></div>
+                    <div class="acc-bar-content">
+                        <div class="acc-bar-num">04</div>
+                        <div class="acc-bar-title">品牌進入市場策略</div>
+                    </div>
+                </div>
+                <div class="acc-bar">
+                    <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=15');"></div>
+                    <div class="acc-bar-overlay"></div>
+                    <div class="acc-bar-content">
+                        <div class="acc-bar-num">05</div>
+                        <div class="acc-bar-title">品牌現況及經營策略分析</div>
+                    </div>
+                </div>
+                <div class="acc-bar">
+                    <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=16');"></div>
+                    <div class="acc-bar-overlay"></div>
+                    <div class="acc-bar-content">
+                        <div class="acc-bar-num">06</div>
+                        <div class="acc-bar-title">行業專項顧問</div>
+                    </div>
+                </div>
+                <div class="acc-bar">
+                    <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=17');"></div>
+                    <div class="acc-bar-overlay"></div>
+                    <div class="acc-bar-content">
+                        <div class="acc-bar-num">07</div>
+                        <div class="acc-bar-title">協助企業落實措施</div>
+                    </div>
+                </div>
+                <div class="acc-bar">
+                    <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=18');"></div>
+                    <div class="acc-bar-overlay"></div>
+                    <div class="acc-bar-content">
+                        <div class="acc-bar-num">08</div>
+                        <div class="acc-bar-title">監察市場趨勢</div>
+                    </div>
+                </div>
+                <div class="acc-bar">
+                    <div class="acc-bar-img" style="background-image: url('https://picsum.photos/400/600?random=19');"></div>
+                    <div class="acc-bar-overlay"></div>
+                    <div class="acc-bar-content">
+                        <div class="acc-bar-num">09</div>
+                        <div class="acc-bar-title">定期報告與跟進</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 斜切分隔 -->
+    <div class="section-divider bg-bg">
+        <div class="divider-slant bg-bg-soft" style="clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);"></div>
     </div>
-  </div>
-</footer>
 
-<script>
-(function() {
-  // ========== Header 滚动效果 ==========
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 30);
-  });
+    <!-- ========== 專案流程 ========== -->
+    <section id="process" class="py-24 md:py-32 bg-bg-soft relative overflow-hidden">
+        <div class="float-shape" style="bottom:10%;left:8%;width:130px;height:130px;border:1px solid white;animation-delay:-8s;"></div>
 
-  // ========== 下拉导航 ==========
-  const menuToggle = document.getElementById('menuToggle');
-  const dropdownNav = document.getElementById('dropdownNav');
+        <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+            <div class="text-center mb-20">
+                <div class="reveal reveal-up mb-4">
+                    <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">05 / Consulting Process</span>
+                </div>
+                <div class="reveal reveal-up reveal-delay-1 text-white/60 font-serif text-sm tracking-widest mb-4">
+                    全程監控 · 數據真實 · 專業執行
+                </div>
+                <h2 class="reveal reveal-up reveal-delay-2 font-serif font-bold text-3xl md:text-5xl">專案流程</h2>
+            </div>
 
-  menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    dropdownNav.classList.toggle('open');
-  });
+            <div class="relative mb-20">
+                <div class="timeline-line hidden md:block"></div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
+                    <div class="timeline-step reveal reveal-up flex flex-col items-center text-center">
+                        <div class="timeline-dot mb-6"></div>
+                        <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 01</div>
+                        <h4 class="font-serif font-bold text-lg mb-2 text-white">界定需求</h4>
+                    </div>
+                    <div class="timeline-step reveal reveal-up reveal-delay-1 flex flex-col items-center text-center">
+                        <div class="timeline-dot mb-6"></div>
+                        <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 02</div>
+                        <h4 class="font-serif font-bold text-lg mb-2 text-white">蒐集數據</h4>
+                    </div>
+                    <div class="timeline-step reveal reveal-up reveal-delay-2 flex flex-col items-center text-center">
+                        <div class="timeline-dot mb-6"></div>
+                        <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 03</div>
+                        <h4 class="font-serif font-bold text-lg mb-2 text-white">制定策略</h4>
+                    </div>
+                    <div class="timeline-step reveal reveal-up reveal-delay-3 flex flex-col items-center text-center">
+                        <div class="timeline-dot mb-6"></div>
+                        <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 04</div>
+                        <h4 class="font-serif font-bold text-lg mb-2 text-white">實施支援</h4>
+                    </div>
+                    <div class="timeline-step reveal reveal-up reveal-delay-4 flex flex-col items-center text-center">
+                        <div class="timeline-dot mb-6"></div>
+                        <div class="font-display text-xs tracking-widest text-white/40 mb-2">STEP 05</div>
+                        <h4 class="font-serif font-bold text-lg mb-2 text-white">持續追蹤</h4>
+                    </div>
+                </div>
+            </div>
 
-  // 点击导航项后关闭
-  document.querySelectorAll('.dropdown-nav a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (link.id === 'resourcesTrigger') {
-        e.preventDefault();
-        const submenu = document.getElementById('resourcesSubmenu');
-        const arrow = document.getElementById('resourcesArrow');
-        submenu.classList.toggle('open');
-        arrow.style.transform = submenu.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
-        return;
-      }
-      menuToggle.classList.remove('active');
-      dropdownNav.classList.remove('open');
-    });
-  });
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div class="reveal reveal-left order-2 lg:order-1">
+                    <p class="text-white/50 leading-loose text-sm">
+                        我們設有內部品質監控團隊，透過抽樣覆核、採訪抽查、數據交叉驗證等方式，確保每一個環節的數據收集、分析與報告都具有高度的真實性與專業性。
+                    </p>
+                    <p class="text-white/50 leading-loose text-sm mt-4">
+                        從專案啟動到最終交付，每一步都經過嚴謹的品質把關，讓客戶放心依託我們的專業服務。
+                    </p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-sm border border-white/15 flex items-center justify-center bg-bg-deep">
+                            <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-white text-sm font-medium">品質保證</div>
+                            <div class="text-white/40 text-xs">三重驗證機制 · 數據真實可靠</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal reveal-right reveal-delay-2 order-1 lg:order-2">
+                    <div class="relative overflow-hidden rounded-sm tilt-card" data-tilt data-tilt-max="5">
+                        <div class="tilt-card-inner">
+                            <img src="https://picsum.photos/700/400?random=9" alt="專案流程" class="w-full h-72 md:h-80 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-bg-soft/40 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  // ========== 滚动入场动画 ==========
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    <!-- ========== 聯絡我們 ========== -->
+    <section id="contact" class="py-24 md:py-32 bg-bg relative overflow-hidden">
+        <div class="deco-big-text absolute left-0 bottom-10">CONTACT</div>
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  document.querySelectorAll('.timeline-step').forEach(el => observer.observe(el));
+        <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+                <div class="lg:col-span-5">
+                    <div class="reveal reveal-left mb-4">
+                        <span class="text-white/40 text-xs tracking-widest-xl uppercase font-display">06 / Contact Us</span>
+                    </div>
+                    <h2 class="reveal reveal-left reveal-delay-1 font-serif font-bold text-3xl md:text-5xl mb-6 leading-tight">
+                        歡迎諮詢
+                    </h2>
+                    <p class="reveal reveal-left reveal-delay-2 text-white/50 leading-relaxed text-sm mb-10">
+                        啟動您的數據驅動增長之旅：與銳鋒顧問的專業團隊展開對話，探索驅動您業務增長的無限可能。
+                    </p>
 
-  // ========== 数字增长动画 ==========
-  const numberObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseInt(el.dataset.target);
-      const duration = 2000;
-      const startTime = performance.now();
+                    <div class="reveal reveal-left reveal-delay-3 flex items-center gap-4 mb-10 text-white/60 text-sm">
+                        <span class="inline-flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            24小時內專人回覆
+                        </span>
+                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                        <span>免費初步諮詢</span>
+                    </div>
 
-      function animate(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(easeOut * target);
-        if (progress < 1) requestAnimationFrame(animate);
-        else el.textContent = target;
-      }
-      requestAnimationFrame(animate);
-      numberObserver.unobserve(el);
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('.stat-number').forEach(el => numberObserver.observe(el));
+                    <div class="reveal reveal-left reveal-delay-4 mb-5 p-5 border border-white/10 rounded-sm hover:border-white/20 transition-colors group cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-sm border border-white/15 flex items-center justify-center bg-bg-deep group-hover:border-white/30 transition-colors">
+                                <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-white/40 text-[10px] tracking-widest mb-1">EMAIL</div>
+                                <a href="mailto:contact@topmarket.com.hk" class="text-white text-sm hover:text-white/80 transition-colors">contact@topmarket.com.hk</a>
+                            </div>
+                        </div>
+                    </div>
 
-  // ========== 3D 卡片倾斜 ==========
-  function initTilt() {
-    if (window.innerWidth < 768) return;
-    document.querySelectorAll('[data-tilt]').forEach(card => {
-      if (card.dataset.tiltInit) return;
-      card.dataset.tiltInit = 'true';
-      const maxTilt = parseFloat(card.dataset.tiltMax) || 10;
+                    <div class="reveal reveal-left reveal-delay-5 p-5 border border-white/10 rounded-sm hover:border-white/20 transition-colors group cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-sm border border-white/15 flex items-center justify-center bg-bg-deep group-hover:border-white/30 transition-colors">
+                                <svg class="w-5 h-5 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-white/40 text-[10px] tracking-widest mb-1">LINKEDIN</div>
+                                <a href="#" class="text-white text-sm hover:text-white/80 transition-colors">TOP MARKET 銳鋒顧問</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const cx = rect.width / 2;
-        const cy = rect.height / 2;
-        const rotateX = ((y - cy) / cy) * -maxTilt;
-        const rotateY = ((x - cx) / cx) * maxTilt;
+                <div class="lg:col-span-7">
+                    <form class="reveal reveal-right reveal-delay-2 bg-bg-card border border-border rounded-sm p-8 md:p-10 space-y-5" id="contactForm">
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-white/40 text-[10px] tracking-widest mb-3">姓名</label>
+                                <input type="text" class="form-input" placeholder="請輸入您的姓名" required>
+                            </div>
+                            <div>
+                                <label class="block text-white/40 text-[10px] tracking-widest mb-3">電郵</label>
+                                <input type="email" class="form-input" placeholder="請輸入您的電郵" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-white/40 text-[10px] tracking-widest mb-3">公司</label>
+                            <input type="text" class="form-input" placeholder="請輸入公司名稱">
+                        </div>
+                        <div>
+                            <label class="block text-white/40 text-[10px] tracking-widest mb-3">留言</label>
+                            <textarea class="form-input min-h-[120px] resize-none" placeholder="請簡述您的需求或問題..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full justify-center">
+                            提交諮詢
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </button>
+                        <p class="text-white/30 text-xs text-center">
+                            提交即表示您同意我們的隱私政策，我們將於 24 小時內與您聯絡。
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        const inner = card.querySelector('.tilt-card-inner');
-        if (inner) inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+    <!-- ========== 页脚 ========== -->
+    <footer class="bg-bg-deep border-t border-white/5 py-16">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="grid md:grid-cols-12 gap-10 mb-12">
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="logo-mark">
+                            <span>TM</span>
+                        </div>
+                        <div>
+                            <div class="text-white font-display font-bold text-sm tracking-widest">TOP MARKET</div>
+                            <div class="text-white/40 text-[10px] tracking-widest mt-0.5">銳鋒顧問有限公司</div>
+                        </div>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed max-w-md">
+                        整合市場數據蒐集、消費者行為研究及品牌營運策略的全方位商業諮詢機構。以銳見洞察行業，用鋒利攻破市場。
+                    </p>
+                </div>
 
-        card.querySelectorAll('.tilt-parallax').forEach(el => {
-          const depth = parseFloat(el.dataset.tiltDepth) || 0.1;
-          el.style.transform = `translateX(${rotateY * depth}px) translateY(${-rotateX * depth}px)`;
-        });
-      });
+                <div class="md:col-span-3">
+                    <h5 class="text-white/60 font-medium text-xs tracking-widest mb-5">快速連結</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#about" class="text-white/40 hover:text-white transition-colors">關於我們</a></li>
+                        <li><a href="#business" class="text-white/40 hover:text-white transition-colors">核心業務</a></li>
+                        <li><a href="#services" class="text-white/40 hover:text-white transition-colors">業務範圍</a></li>
+                        <li><a href="#contact" class="text-white/40 hover:text-white transition-colors">聯絡我們</a></li>
+                    </ul>
+                </div>
 
-      card.addEventListener('mouseleave', () => {
-        const inner = card.querySelector('.tilt-card-inner');
-        if (inner) inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
-        card.querySelectorAll('.tilt-parallax').forEach(el => {
-          el.style.transform = 'translateX(0) translateY(0)';
-        });
-      });
-    });
-  }
-  initTilt();
+                <div class="md:col-span-4">
+                    <h5 class="text-white/60 font-medium text-xs tracking-widest mb-5">聯絡資訊</h5>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li>contact@topmarket.com.hk</li>
+                        <li>TOP MARKET Consulting Limited</li>
+                        <li>Hong Kong</li>
+                    </ul>
+                </div>
+            </div>
 
-  // ========== Hero 标题 3D 鼠标跟随 ==========
-  const heroTitle = document.getElementById('heroTitle');
-  let rafId;
-  let targetX = 0, targetY = 0;
-  let currentX = 0, currentY = 0;
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-white/30 text-xs">© 2024 TOP MARKET 銳鋒顧問有限公司. All Rights Reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-white/30 hover:text-white transition-colors text-xs">隱私政策</a>
+                    <a href="#" class="text-white/30 hover:text-white transition-colors text-xs">服務條款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  document.addEventListener('mousemove', (e) => {
-    targetX = (e.clientX / window.innerWidth - 0.5) * 6;
-    targetY = (e.clientY / window.innerHeight - 0.5) * 6;
-  });
+    <script>
+        (function() {
+            // ========== Header 滚动效果 ==========
+            const header = document.getElementById('siteHeader');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 30);
+            });
 
-  function animateTitle() {
-    currentX += (targetX - currentX) * 0.08;
-    currentY += (targetY - currentY) * 0.08;
-    if (heroTitle) {
-      heroTitle.style.transform = `perspective(800px) rotateY(${currentX}deg) rotateX(${-currentY}deg)`;
-    }
-    rafId = requestAnimationFrame(animateTitle);
-  }
-  animateTitle();
+            // ========== 下拉导航 ==========
+            const menuToggle = document.getElementById('menuToggle');
+            const dropdownNav = document.getElementById('dropdownNav');
 
-  // ========== 视差滚动 ==========
-  const heroBg = document.getElementById('heroBg');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (heroBg && scrollY < window.innerHeight) {
-      heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
-    }
-  });
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                dropdownNav.classList.toggle('open');
+            });
 
-  // ========== 表单提交 ==========
-  const contactForm = document.getElementById('contactForm');
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '已提交 ✓';
-    btn.style.background = '#22c55e';
-    btn.style.borderColor = '#22c55e';
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      contactForm.reset();
-    }, 3000);
-  });
-})();
-</script>
+            document.querySelectorAll('.dropdown-nav a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (link.id === 'resourcesTrigger') {
+                        e.preventDefault();
+                        const submenu = document.getElementById('resourcesSubmenu');
+                        const arrow = document.getElementById('resourcesArrow');
+                        submenu.classList.toggle('open');
+                        arrow.style.transform = submenu.classList.contains('open') ? 'rotate(180deg)' :
+                            'rotate(0deg)';
+                        return;
+                    }
+                    if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+                        // 允许锚点跳转
+                    }
+                    menuToggle.classList.remove('active');
+                    dropdownNav.classList.remove('open');
+                });
+            });
+
+            // ========== 滚动入场动画 ==========
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            document.querySelectorAll('.timeline-step').forEach(el => observer.observe(el));
+
+            // ========== 数字增长动画 ==========
+            const numberObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    const duration = 2000;
+                    const startTime = performance.now();
+
+                    function animate(now) {
+                        const progress = Math.min((now - startTime) / duration, 1);
+                        const easeOut = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.floor(easeOut * target);
+                        if (progress < 1) requestAnimationFrame(animate);
+                        else el.textContent = target;
+                    }
+                    requestAnimationFrame(animate);
+                    numberObserver.unobserve(el);
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('.stat-number').forEach(el => numberObserver.observe(el));
+
+            // ========== 3D 卡片倾斜 ==========
+            function initTilt() {
+                if (window.innerWidth < 768) return;
+                document.querySelectorAll('[data-tilt]').forEach(card => {
+                    if (card.dataset.tiltInit) return;
+                    card.dataset.tiltInit = 'true';
+                    const maxTilt = parseFloat(card.dataset.tiltMax) || 10;
+
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        const cx = rect.width / 2;
+                        const cy = rect.height / 2;
+                        const rotateX = ((y - cy) / cy) * -maxTilt;
+                        const rotateY = ((x - cx) / cx) * maxTilt;
+
+                        const inner = card.querySelector('.tilt-card-inner');
+                        if (inner) inner.style.transform =
+                            `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+
+                        card.querySelectorAll('.tilt-parallax').forEach(el => {
+                            const depth = parseFloat(el.dataset.tiltDepth) || 0.1;
+                            el.style.transform =
+                                `translateX(${rotateY * depth}px) translateY(${-rotateX * depth}px)`;
+                        });
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        const inner = card.querySelector('.tilt-card-inner');
+                        if (inner) inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                        card.querySelectorAll('.tilt-parallax').forEach(el => {
+                            el.style.transform = 'translateX(0) translateY(0)';
+                        });
+                    });
+                });
+            }
+            initTilt();
+
+            // ========== Hero 标题 3D 鼠标跟随 ==========
+            const heroTitle = document.getElementById('heroTitle');
+            let rafId;
+            let targetX = 0,
+                targetY = 0;
+            let currentX = 0,
+                currentY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                targetX = (e.clientX / window.innerWidth - 0.5) * 6;
+                targetY = (e.clientY / window.innerHeight - 0.5) * 6;
+            });
+
+            function animateTitle() {
+                currentX += (targetX - currentX) * 0.08;
+                currentY += (targetY - currentY) * 0.08;
+                if (heroTitle) {
+                    heroTitle.style.transform =
+                        `perspective(800px) rotateY(${currentX}deg) rotateX(${-currentY}deg)`;
+                }
+                rafId = requestAnimationFrame(animateTitle);
+            }
+            animateTitle();
+
+            // ========== 视差滚动 ==========
+            const heroBg = document.getElementById('heroBg');
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (heroBg && scrollY < window.innerHeight) {
+                    heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
+                }
+            });
+
+            // ========== 表单提交 ==========
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = contactForm.querySelector('button[type="submit"]');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '已提交 ✓';
+                btn.style.background = '#22c55e';
+                btn.style.borderColor = '#22c55e';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                    btn.style.borderColor = '';
+                    contactForm.reset();
+                }, 3000);
+            });
+
+            // ========== 资源中心：点击箭头展开 ==========
+            const resourcesTrigger = document.getElementById('resourcesTrigger');
+            if (resourcesTrigger) {
+                resourcesTrigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const submenu = document.getElementById('resourcesSubmenu');
+                    const arrow = document.getElementById('resourcesArrow');
+                    if (submenu) {
+                        submenu.classList.toggle('open');
+                        if (arrow) {
+                            arrow.style.transform = submenu.classList.contains('open') ? 'rotate(180deg)' :
+                                'rotate(0deg)';
+                        }
+                    }
+                });
+            }
+        })();
+    </script>
 
 </body>
 </html>
